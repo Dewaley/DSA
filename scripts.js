@@ -118,3 +118,52 @@ const fibonacci = (n) => {
 /*
     Time comlexity  of fibonacci() => O(n)
 */
+
+// nth term of a Fibonacci sequence
+/*
+Fibonacci sequence => [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...];
+2nd term => 1
+3rd term => 2
+4th term => 3
+
+The fibonacci sequence works such that every number is a sum of the two preceding numbers
+Take the Fib of 4 for instance, 
+it starts with the 1st iteration [0,1]
+then goes to ( 1 + 0 = 1 ) - 2nd iteration [0,1,1] 
+then ( 1 + 1 = 2 ) - 3rd iteration [0,1,1,2] 
+lastly ( 2 + 1 = 3 ) - 4th iteration [0,1,1,2,3]
+*/
+
+const iterativeFibonacci = (n) => {
+  const fib = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib[n];
+};
+
+/*
+    Time comlexity  of iterativeFibonacci() => O(n)
+*/
+
+const recursiveFibonacci = (n) => {
+  if (n < 2) {
+    return n;
+  }
+  return recursiveFibonacci(n - 1) + recursiveFibonacci(n - 2);
+};
+
+/*
+    Time comlexity  of recursiveFibonacci() => O(2^n)
+*/
+
+const recursiveFactorial = (n) => {
+  if (n === 0) {
+    return 1;
+  }
+  return n * recursiveFactorial(n - 1);
+};
+
+/*
+    Time comlexity  of recursiveFibonacci() => O(n)
+*/
